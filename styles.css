@@ -28,7 +28,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    background-color: rgba(0, 0, 0, 0.164); /* Semi-transparent black overlay */
     z-index: 1;
 }
 
