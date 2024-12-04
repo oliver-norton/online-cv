@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Top Section with Background Image -->
+    <div class="background-image">
+        <header>
+            <h1>Oliver Norton</h1>
+            <h2>Projects</h2>
+        </header>
+    </div>
+
+    <!-- Blog Layout -->
+    <div class="blog-container">
+        <!-- Left Column -->
+        <div class="blog-sidebar">
+            <p><strong>Date:</strong> Sept 2023 - Jan 2024</p>
+            <p><strong>Tools used:</strong> Python, UCloud, Git, LaTeX, NetworkX, Gephi, scikit-learn            </p>
+            <p><strong>Keywords:</strong> Network analysis, data wrangling, machine learning, natural language processing (NLP), complex systems, graph theory, cloud computing, building machine learning models, managing virtual machines (VM, VMs)
+            </p>
+            <p><strong>Data source:</strong> Radarly API </p>
+            <p><strong>Project link:</strong> <a href="https://github.com/oliver-norton/masters_thesis" target="_blank">GitHub</a></p>
+        </div>
+
+        <!-- Right Column -->
+        <div class="blog-main">
+             <h2>QUANTIFYING POLARISATION ON A LARGE SCALE USING MACHINE LEARNING AND NETWORKS ANALYSIS</h2>
+            <div class="blog-cover">
+                <img src="../images/articles/thesis/thesis_cover_cr.png" alt="Cover Image">
+            </div>
+
+            <p>Political polarisation can harm democracy by causing division, gridlock, and limited voter choices, making it important to measure accurately. My research develops a new method to study polarisation in multiparty systems by analysing Twitter data, focusing on the 2022 French presidential election. The findings show that while overall polarisation is low, far-right supporters express more extreme views, and politically
+                 active individuals tend to hold stronger opinions, offering insights into public opinion patterns.</p>
+
+            <h3>Goals:</h3>
+            <p>In my thesis I sought to: </p>
+            <ul>
+                <li>Build a relevant text-based dataset of the 2022 French elections</li>
+                <li>Quantify political polarisation using this dataset</li>
+            </ul>
+
+            <h3>Dataset</h3>
+            <p>
+                A collection of over 5 million Tweets and 16 million retweets that I collected from a commercial API, Radarly. The period of time was a few weeks in April 2022. 
+            </p>
+
+            <h3>Summary/Highlights</h3>
+            <h4>Data collection            </h4>
+            <p>
+                To collect the data I used a boolean query method based on key words related to the elections. A boolean search might be: “election” AND 
+                “france” OR “macron”. To identify relevant keywords, and expand my dataset, I used a method called 
+                computer assisted keyword expansion, which uses a lasso regression to predict which keywords were topic relevant based on log-likelihood. 
+            </p>
+            <img src="../images/articles/thesis/keyword expansion.png" alt="Topics Discussed">
+            <figcaption>Figure 1: Approach to collecting relevant data using keyword expansion.</figcaption>
+
+            <h4>Quantifying polarisation            </h4>
+            <p>
+                I quantified polarisation using a type of variance called total variation, which is variance between not just two variables, but multiple. 
+                In this case, I was measuring the variance between 
+                the 4 main political parties. Two of these are those led by Marine Le Pen and President Emmanuel Macron respectively.  
+            </p>
+            <img src="../images/articles/thesis/method summary.png" alt="LDA Analysis">
+            <figcaption>Figure 2: A summary of how retweets are used as a means of endorsement, and can thus help to measure polarisation.</figcaption>
+
+            <p>
+            In the visual below you can see part of the results of the analysis. Each of the 4 political parties 
+            lies at one of the tips of a tetratedron (3D triangle). The coloured histograms along the edges of the
+             triangles show the distribution of public opinion with respect to any two parties. 
+            </p>
+
+            <img src="../images/articles/thesis/results thesis.png" alt="Retweet Network">
+            <figcaption>Figure 3: Visualisation of polarisation measure with heatmap indicating spatiality of opinion with respect to parties</figcaption>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Oliver Norton</p>
+    </footer>
+</body>
+</html>
