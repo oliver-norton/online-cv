@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Title</title>
+    <title>Projects</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
     <div class="background-image">
         <header>
             <h1>Oliver Norton</h1>
-            <h2>Blog/Articles</h2>
+            <h2>Projects</h2>
         </header>
     </div>
 
@@ -35,13 +35,60 @@
         <!-- Right Column -->
         <div class="blog-main">
             <div class="blog-cover">
-                <img src="images/blog-cover.jpg" alt="Cover Image">
+                <img src="images/articles/cop26/cop26_cover.png" alt="Cover Image">
             </div>
-            <h2>Title of the Blog Post</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.</p>
-            <img src="images/blog-image.jpg" alt="Blog Image">
-            <figcaption>Figure 1: Example Caption</figcaption>
+            <h2>Analysing the climate debate</h2>
+            <p>Climate change. It’s a highly important issue that will affect all of society. The future of society depends on what we decide to do, as individuals, businesses and governments. However, for climate action to take place, there needs to be agreement - but so often there is disagreement.</p>
+
+            <h3>Goals:</h3>
+                <p>In this project, I worked with my peers to understand the climate change debate on Twitter during the UN COP26 conference. To do so, we sought to understand:</p>
+                <ul>
+                    <li>What topics people discussed most</li>
+                    <li>How much people agreed or disagreed in our dataset</li>
+                </ul>
+            <h3>Highlights:</h3>
+                <ul>
+                    <li>Topics discussed using supervised machine learning</li>
+                    <li>Latent Dirichlet Allocation (LDA) for undiscovered topics</li>
+                    <li>Network analysis of agreement and disagreement</li>
+                </ul>
+        
+            <h3>Dataset</h3>
+            <p>
+                We collected multiple snowball samples of Tweets from the Twitter API related to the topic of the COP26 conference. 
+                The tweets were from 31 October to 13 November 2021, during the conference. The dataset contains: 
+                the text of the tweet, the user who posted the tweet, a time stamp, and other metadata.
+            </p>
+
+            <h3>Summary/Highlights</h3>
+            <h4>Topics Discussed</h4>
+            <p>
+                We used a sample of tweets from our dataset to hand-code tweets under the official discussion topics of COP26. 
+                Below you can see the distribution of topics in our dataset over the course of the conference. 
+                There is a dip on 7th of November, a Sunday, when the conference was not in session.
+            </p>
+            <img src="images/articles/cop26/topics_analysis.png" alt="Topics Discussed">
+            <figcaption>Figure 1: Distribution of topics discussed during COP26.</figcaption>
+
+            <h4>Undiscovered Topics</h4>
+            <p>
+                Using the LDA package in Python, we identified potential topics not otherwise highlighted. 
+                The limitations of LDA are that the generated topics often don’t make sense out of context and require manual investigation to interpret.
+            </p>
+            <img src="images/articles/cop26/lda topics.png" alt="LDA Analysis">
+            <figcaption>Figure 2: Topics identified using LDA topic modelling.</figcaption>
+
+            <h3>Agreement and Disagreement</h3>
+            <p>
+                To identify relations between actors, we performed a network analysis based on how people online endorsed each other using retweets. 
+                Below is a visualisation of the retweet network we produced. 
+                There is a clear divide between supporters (Antonio Guterres and others) and vocal critics (Greta Thunberg and others).
+            </p>
+            <img src="images/articles/cop26/vis annotated.png" alt="Retweet Network">
+            <figcaption>Figure 3: Retweet network visualisation showing agreement and disagreement.</figcaption>
         </div>
+    </div>
+
     </div>
 
     <footer>
