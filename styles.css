@@ -13,7 +13,7 @@ body {
     background-image: url('/images/background_sliced.png'); /* Corrected the background path */
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 200px;
     color: white;
     display: flex;
     justify-content: center;
