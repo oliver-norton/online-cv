@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Top Section with Background Image -->
+    <div class="background-image">
+        <header>
+            <h1>Oliver Norton</h1>
+            <h2>Projects</h2>
+        </header>
+    </div>
+
+    <!-- Blog Layout -->
+    <div class="blog-container">
+        <!-- Left Column -->
+        <div class="blog-sidebar">
+            <p><strong>Date:</strong> July 2024</p>
+            <p><strong>Tools used:</strong> Docker, dbt, Python, Bash scripting, Linux, Ubuntu, SQL, Tableau, Git, GitHub actions, Power BI            </p>
+            <p><strong>Keywords:</strong> 
+                
+                Data Engineering, ETL, ELT, Analytics engineering, Data visualisation, Automation, Scripting
+            </p>
+            <p><strong>Data source:</strong> Generated data from Faker  </p>
+            <p><strong>Project link:</strong> <a href="https://github.com/oliver-norton/https://github.com/oliver-norton/aether_energy_analytics/" target="_blank">GitHub</a></p>
+        </div>
+
+        <!-- Right Column -->
+        <div class="blog-main">
+             <h2>CREATING A DATA PIPELINE FOR AN ENERGY COMPANY (AETHER ENERGY)            </h2>
+            <div class="blog-cover">
+                <img src="../images/articles/aether_energy/aether_process.png" alt="Cover Image">
+            </div>
+
+            <p>
+                Aether Energy is a fictional energy company that has a database of customer energy 
+                consumption data. Aether Energy needs someone to extract, load, and transform the data
+                 in its database to meet the needs of the business. The transformed database must be in the right structure, with high data integrity, to allow Data Analysts and BI Specialists to extract actionable insights.
+
+            </p>
+
+            <h3>Goals:</h3>
+            <p>The project aims were to create data pipelines, perform extract, 
+                transform and load (ETL, ELT) processes; and to learn new
+                 tools and approaches related to data engineering And analytics 
+                 engineering. Specifically, I sought to: 
+            </p>
+            <ul>
+                <li>Create a data pipeline using dbt </li>
+                <li>Automate the data pipeline</li>
+                <li>Visualise the transformed data</li>
+            </ul>
+
+            <!-- <h3>Dataset</h3>
+            <p>
+                A collection of over 5 million Tweets and 16 million retweets that I collected from a commercial API, Radarly. The period of time was a few weeks in April 2022. 
+            </p> -->
+
+            <h3>Summary/Highlights</h3>
+             <img src="../images/articles/aether_energy/aether_process.png" alt="Topics Discussed">
+            <figcaption>Figure 1: A summary of the ELT/ETL process, including automation.</figcaption>
+
+            <h4>Creating a dbt pipeline </h4>
+            <p>
+                To start, I used the Python library to generate the type 
+                of data that an energy company would collect. Then, I used
+                 dbt to transform the data and store it in a SQL database 
+                  (DuckDB). This involved the following: 
+
+            </p>
+
+            <ul>
+                <li>Transforming raw data using SQL queries to meet the requirements of my given case                 </li>
+                <li>Creating comprehensive data models and schema for structuring data</li>
+                <li>Implementing testing and quality checks to ensure data integrity    </li>
+                <li>Utilising Git for version control to manage project changes </li>
+            </ul>
+
+            <!-- <img src="../images/articles/aether_energy/aether_power_bi_vis.png" alt="Topics Discussed">
+            <figcaption>Figure 1: Approach to collecting relevant data using keyword expansion.</figcaption> -->
+
+            <h4>Automating the data pipeline            </h4>
+            <p>
+                To automate, I needed to containerise the enivronment in which I had written 
+                the Python script, a (optional) bash script and the dbt project. 
+                To do this, I created a container using Docker, incorporating all the 
+                elements in the ELT / ETL process. Then, I used GitHub actions to activate the container process. 
+
+                Visualising the transformed data
+
+            
+            </p>
+
+            <h4> Visualising the transformed data    </h4>
+            <p>I used Power BI to visualise the transformed data produced in the project:            </p>
+            <img src="../images/articles/aether_energy/aether_power_bi_vis.png" alt="LDA Analysis">
+            <figcaption>Figure 2: A sample visualisation of the transformed data, related to energy.</figcaption>
+
+            <!-- <p>
+            In the visual below you can see part of the results of the analysis. Each of the 4 political parties 
+            lies at one of the tips of a tetratedron (3D triangle). The coloured histograms along the edges of the
+             triangles show the distribution of public opinion with respect to any two parties. 
+            </p>
+
+            <img src="../images/articles/aether_energy/results thesis.png" alt="Retweet Network">
+            <figcaption>Figure 3: Visualisation of polarisation measure with heatmap indicating spatiality of opinion with respect to parties</figcaption> -->
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Oliver Norton</p>
+    </footer>
+</body>
+</html>
