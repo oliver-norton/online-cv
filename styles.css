@@ -10,7 +10,7 @@ body {
 /* Background Image with Semi-Transparent Overlay */
 .background-image {
     position: relative;
-    background-image: url('../images/background.jpg'); /* Replace with actual background path */
+    background-image: url('images/background.jpg'); /* Replace with actual background path */
     background-size: cover;
     background-position: center;
     height: 400px;
