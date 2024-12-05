@@ -1,4 +1,4 @@
-/* General Reset */
+/* General styles */
 body {
     margin: 0;
     padding: 0;
@@ -7,40 +7,39 @@ body {
 }
 
 .page {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
+    text-align: center;
 }
 
+/* Title Page */
 .full-cover {
     background: url('images/cover_full_nz.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     position: relative;
+    filter: brightness(50%);
 }
 
-.full-cover header h1 {
+/* Title text */
+h1, h2, h3, .nav-link {
+    text-transform: uppercase;
+}
+
+h1 {
     font-size: 3rem;
+    font-weight: bold;
 }
 
-.full-cover header h2 {
-    margin-top: 10px;
+h2 {
     font-size: 1.5rem;
+    font-weight: normal;
 }
 
-.social-links {
-    margin-top: 20px;
+h3 {
+    font-size: 1.2rem;
 }
 
-.social-links img {
-    width: 30px;
-    margin: 0 10px;
-}
-
-/* Persistent Navigation Bar */
+/* Persistent Navigation */
 .persistent-nav {
     position: fixed;
     bottom: 0;
@@ -60,6 +59,7 @@ body {
     padding: 10px 20px;
     border-radius: 20px;
     transition: all 0.3s;
+    font-weight: normal;
 }
 
 .nav-link:hover,
@@ -68,85 +68,64 @@ body {
     color: black;
 }
 
-/* Competencies Grid */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    width: 90%;
-    text-align: center;
+/* Downward arrow button */
+.down-arrow {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 3rem;
+    padding: 10px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.grid-item img {
-    width: 100px;
-    margin-bottom: 10px;
+/* Competencies Page */
+#competencies {
+    background-color: #e5d8cf;
 }
 
-/* Projects Row */
+.grid-item {
+    background-color: #ccc;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Projects */
+.project-item {
+    background-color: #ccc;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* Interests */
+.interest-box {
+    background-color: #ccc;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Highlight active page in the persistent nav */
+.nav-link.active {
+    background-color: white;
+    color: black;
+}
+
+/* Other custom styles */
 .project-row {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
-}
-
-.project-item {
-    width: 200px;
 }
 
 .project-item img {
     width: 100%;
-    border-radius: 5px;
+    height: auto;
 }
 
-/* CV Button */
-.cv-button {
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-decoration: none;
+.project-item h3 {
     font-size: 1.2rem;
-    transition: all 0.3s;
 }
-
-.cv-button:hover {
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-}
-
-/* Interests Section */
-.interests-row {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 20px; /* Add spacing between items */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-}
-
-.interest {
-    flex: 1;
-    max-width: 300px; /* Prevent items from stretching too wide */
-    text-align: center;
-    margin: 0 10px; /* Add horizontal margin for better spacing */
-}
-
-.interest h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-
-.interest img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.interest p {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-
