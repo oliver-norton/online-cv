@@ -118,9 +118,19 @@ body {
 }
 
 /* Interests Section */
+.interests-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px; /* Add spacing between items */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
 .interest {
-    margin-bottom: 40px;
+    flex: 1;
+    max-width: 300px; /* Prevent items from stretching too wide */
     text-align: center;
+    margin: 0 10px; /* Add horizontal margin for better spacing */
 }
 
 .interest h3 {
@@ -129,8 +139,7 @@ body {
 }
 
 .interest img {
-    width: 80%;
-    max-width: 400px;
+    width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
 }
@@ -138,6 +147,6 @@ body {
 .interest p {
     font-size: 1rem;
     line-height: 1.5;
-    margin-bottom: 10px;
 }
+
 
