@@ -1,91 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oliver Norton - Portfolio</title>
-    <link rel="stylesheet" href="main-styles.css">
-    <script>
-    function scrollToSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        window.scrollTo({
-            top: section.offsetTop,
-            behavior: 'smooth'
-        });
-    }
-</script>
-</head>
-<body>
-    <!-- Persistent Bottom Navigation -->
-    <nav class="persistent-nav">
-        <a href="#title" class="nav-link" id="nav-home">HOME</a>
-        <a href="#competencies" class="nav-link" id="nav-competencies">COMPETENCIES</a>
-        <a href="#projects" class="nav-link" id="nav-projects">PROJECTS</a>
-        <a href="#interests" class="nav-link" id="nav-interests">INTERESTS</a>
-        <a href="#cv" class="nav-link" id="nav-cv">CV</a>
-    </nav>
-
-    <!-- Title Page -->
-    <section id="title" class="page full-cover">
-        <header>
-            <h1>OLIVER NORTON</h1>
-            <h2>DATA SCIENTIST | BEHAVIOUR, NETWORKS, AND IDEAS</h2>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/-oliver-norton/" target="_blank">
-                    <img src="images/linkedin.png" alt="LinkedIn" class="icon">
-                </a>
-                <a href="https://github.com/oliver-norton/" target="_blank">
-                    <img src="images/github.png" alt="GitHub" class="icon">
-                </a>
-                <a href="mailto:youremail@example.com">
-                    <img src="images/envelope.png" alt="Email" class="icon">
-                </a>
-            </div>
-        </header>
-    </section>
-
-    <!-- Downward Arrow Button -->
-    <button class="down-arrow" onclick="scrollToSection('competencies')">&#8595;</button>
-
-    <!-- Competencies -->
-    <section id="competencies" class="page">
-        <h2>COMPETENCIES</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <img src="images/competencies/deep-learning.png" alt="Competency 1">
-                <h3>DATA SCIENCE</h3>
-                <p>Building predictive models, time series analysis, and advanced machine learning solutions.</p>
-            </div>
-            <!-- Repeat for other grid items -->
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="page">
-        <h2>PROJECTS</h2>
-        <div class="project-row">
-            <div class="project-item" onclick="window.location.href='https://oliver-norton.github.io/online-cv/projects/carpooling_as'">
-                <img src="images/articles/cop26/cop26_cover_cr.png" alt="Project 1">
-                <h3>COP26</h3>
-            </div>
-            <!-- Repeat for other projects with the respective URLs -->
-        </div>
-    </section>
-
-    <!-- Interests -->
-    <section id="interests" class="page">
-        <h2>INTERESTS</h2>
-        <div class="interest-box">
+<section id="interests" class="page">
+    <h2>Interests</h2>
+    <div class="interests-row">
+        <!-- Cycling -->
+        <div class="interest">
             <h3>Cycling</h3>
-            <img src="images/interests/bike_trip_cr.png" alt="Cycling">
+            <img src="images/interests/bike_trip_cr.png" alt="Cycling from Morocco to England">
+            <p>At age 19, I cycled from the south of Morocco to the south of England, over 4000 km.</p>
         </div>
-        <!-- Repeat for other interests -->
-    </section>
 
-    <!-- CV -->
-    <section id="cv" class="page">
-        <h2>DOWNLOAD MY CV</h2>
-        <a href="test_CV.pdf" class="cv-button" download>Download CV</a>
-    </section>
-</body>
-</html>
+        <!-- Hiking -->
+        <div class="interest">
+            <h3>Hiking</h3>
+            <img src="images/interests/hiking.jpg" alt="Hiking highest peaks">
+            <p>I’ve climbed the highest peaks in 4 countries: Morocco (3400m), Zimbabwe (0000m), UK (0000m), and Ireland (0000m).</p>
+        </div>
+
+        <!-- Travel and Living in Other Countries -->
+        <div class="interest">
+            <h3>Travel and Living in Other Countries</h3>
+            <img src="images/interests/countries.png" alt="Map of visited countries">
+            <p>Now, I’ve visited 35 countries, and counting, and lived in 7 (Ireland, Zimbabwe, China, New Zealand, Australia, Denmark, and France).</p>
+        </div>
+    </div>
+</section>
