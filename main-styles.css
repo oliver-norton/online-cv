@@ -1,3 +1,122 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.full-cover {
+    background: url('images/cover_full_nz.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.full-cover header h1 {
+    font-size: 3rem;
+}
+
+.full-cover header h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+/* Persistent Navigation Bar */
+.persistent-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: white;
+    color: black;
+}
+
+/* Competencies Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 90%;
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+/* Projects Row */
+.project-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.project-item {
+    width: 200px;
+}
+
+.project-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* CV Button */
+.cv-button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.cv-button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
 /* Interests Section */
 .interests-row {
     display: flex;
