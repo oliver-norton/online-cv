@@ -116,3 +116,33 @@ body {
     color: black;
     border: 2px solid black;
 }
+
+/* Interests Section */
+.interest {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.interest h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.interest img {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.interest p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Map */
+#mapdiv {
+    border: 1px solid #333;
+    border-radius: 10px;
+}
