@@ -4,7 +4,9 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
+    background-color: #e4dad2; /* Set the background color for the entire page */
 }
+
 
 .page {
     height: 100vh;
