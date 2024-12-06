@@ -149,6 +149,7 @@ footer {
     font-size: 14px; /* Font size */
     font-weight: bold;
     transition: background-color 0.3s ease; /* Smooth hover transition */
+    z-index: 10; /* Ensure it appears above the background */
 }
 
 .back-button:hover {
