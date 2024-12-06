@@ -110,6 +110,10 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     text-align: center; /* Centre text and content */
     max-width: 250px; /* Optional: limit the width of the project box */
+    text-decoration: none; /* Ensure no underlines on links */
+    color: inherit; /* Keep text colours consistent */
+    display: block; /* Makes the whole box clickable */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Adds hover animation */
 }
 
 
@@ -117,6 +121,18 @@ body {
     width: 100%;
     border-radius: 5px;
 }
+
+.project-item {
+    display: block; /* Ensures the whole box is clickable */
+    text-decoration: none; /* Removes the underline from the link */
+    color: inherit; /* Keeps the original text colour */
+}
+
+.project-item:hover {
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
+}
+
 
 /* CV Button */
 .cv-button {
