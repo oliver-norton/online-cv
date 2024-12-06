@@ -135,3 +135,23 @@ footer {
         border-bottom: 1px solid #ddd;
     }
 }
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #f0f0f0; /* Light grey background */
+    color: #333; /* Text colour */
+    text-decoration: none; /* No underline */
+    padding: 8px 12px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-size: 14px; /* Font size */
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.back-button:hover {
+    background-color: #dcdcdc; /* Slightly darker grey on hover */
+}
+
