@@ -213,12 +213,11 @@ a:hover {
 /* Competencies, Projects, and Interests: Scrollable Grid */
 .scrollable-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Auto-fit items but limit to 3 items per row */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
     gap: 20px;
-    height: auto; /* Let height be dynamic, depends on content */
-    overflow-y: scroll; /* Allow vertical scrolling */
+    overflow-x: auto; /* Allow horizontal scrolling */
     scroll-behavior: smooth; /* Smooth scrolling */
-    padding: 20px;
+    padding: 10px 0;
     box-sizing: border-box;
 }
 
