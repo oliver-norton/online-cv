@@ -24,7 +24,7 @@
         <div class="blog-sidebar">
             <p><strong>Date:</strong> December 2024</p>
             <p><strong>Tools used:</strong> Python</p>
-            <p><strong>Keywords:</strong> Fraud detection, FinTech</p>
+            <p><strong>Keywords:</strong> Fraud Detection, LightGBM, Machine Learning, Feature Engineering, Exploratory Data Analysis (EDA), Imbalanced Dataset Handling, Gradient Boosting Models, Categorical Feature Encoding, Target Encoding, Label Encoding, Correlation Analysis, Tree-Based Models, Hyperparameter Tuning, Model Evaluation (ROC AUC), Data Preprocessing, Time-Series Analysis, Pattern Recognition, Predictive Modeling</p>
             <p><strong>Data source:</strong> <a href="https://www.kaggle.com/c/ieee-fraud-detection/" target="_blank">IEEE-CIS Fraud Detection Dataset</a></p>
         </div>
 
@@ -36,7 +36,7 @@
             </div>
 
             <p>
-                Financial fraud is a serious issue in the financial industry and can cost substantial amounts. Identifying suspicious transactions is the goal.
+                Financial fraud is a serious issue in the financial industry and can cost substantial amounts. Identifying suspicious transactions is the goal in this project.
             </p>
 
             <h3>Overview</h3>
@@ -44,9 +44,16 @@
                 The dataset I am using is from the <a href="https://www.kaggle.com/c/ieee-fraud-detection/overview" target="_blank">IEEE-CIS Fraud Detection competition</a>. More information about the features is available <a href="https://www.kaggle.com/c/ieee-fraud-detection/data" target="_blank">here</a>.
             </p>
 
-            <h3>Exploratory Data Analysis and Model Choice</h3>
+            <h3>1 Exploratory Data Analysis and Model Choice</h3>
+
+            <p>
+                I performed exploratory data analysis (EDA) to evaulate the type of data I am working with, and use this information to choose the correct machine learning model.
+            </p>
 
             <h4>2.1 Identifying Categorical and Numerical Features</h4>
+            <p>
+                Categorical features are identified by the IEEE. The rest of the features are numerical, and include a much higher number (>200). Many features may allow for a high performing model, with more information to train on, but also may introduce unwanted complexity which may create noise.
+            </p>
 
             <h4>2.2 Evaluating Class Imbalance</h4>
             <p>
@@ -62,13 +69,13 @@
             <p>
                 Many features are not normally distributed and have outliers. This makes scaling challenging, and linear models unsuitable. To address this, I chose LightGBM, a tree-based model that handles non-normal distributions effectively.
             </p>
-            <img src="../images/articles/safe_bank/Features_distributions.png" alt="Feature Distributions">
+            <img src="../images/articles/safe_bank/features_distributions.png" alt="Feature Distributions">
 
             <h4>2.4 Evaluating Correlated Features</h4>
             <p>
                 Highly correlated features were identified and later removed to reduce model complexity and noise. Similarly, features with low correlation to the target variable were also removed.
             </p>
-            <img src="../images/articles/safe_bank/Correlations.png" alt="Correlations">
+            <img src="../images/articles/safe_bank/correlations.png" alt="Correlations">
 
             <h4>2.5 Model Choice - LightGBM</h4>
             <p>
@@ -88,23 +95,25 @@
                 <li>Performs worse than newer deep learning approaches</li>
             </ul>
 
-            <h3>Categorical Preprocessing</h3>
+            <h3>3 Categorical Preprocessing</h3>
             <ul>
                 <li>Identified cardinality of features</li>
                 <li>Applied label encoding to low cardinality features</li>
                 <li>Applied target encoding to high cardinality features</li>
             </ul>
 
-            <h3>Feature Engineering</h3>
+            <h3>4 Feature Engineering</h3>
 
             <h4>4.1 Enriching Date-Time Related Variables</h4>
             <p>
-                The TransactionDT variable is a time-delta feature. Additional columns derived from it capture time-related patterns:
+                The TransactionDT variable is a time-delta feature (i.e. time in seconds from a given point in time). Additional columns derived from it capture time-related patterns:
             </p>
             <ul>
                 <li>Daily fraud rates</li>
                 <li>Cyclical transformations (sin/cos for hours and weekdays)</li>
             </ul>
+
+
             <img src="../images/articles/safe_bank/fraud_rate_daily.png" alt="Fraud Rate Daily">
 
             <h4>4.2 Enriching Transaction Amount</h4>
@@ -117,7 +126,7 @@
                 Features with low correlation to the target variable were removed to reduce noise and improve performance.
             </p>
 
-            <h3>Training and Classification</h3>
+            <h3>5 Training and Classification</h3>
 
             <h4>5.1 Setting Parameters and Training</h4>
             <p>
