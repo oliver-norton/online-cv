@@ -132,8 +132,6 @@ body {
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effects */
 }
 
-
-
 .grid-item img,
 .project-item img,
 .interest img {
