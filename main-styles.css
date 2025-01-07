@@ -16,21 +16,6 @@ body {
     padding: 20px;
 }
 
-.page h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.page h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.page p {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
 .full-cover {
     background: url('images/cover_full_nz.jpg') no-repeat center center/cover;
     color: white;
@@ -127,6 +112,57 @@ a:hover {
     }
 }
 
+
+
+
+/* Ensure horizontal scrolling and no wrapping in grid/row containers */
+.grid-container,
+.project-row,
+.interests-row {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to grid items on horizontal scroll */
+    padding: 10px 0; /* Adds spacing */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    flex-wrap: nowrap;  /* Prevent wrapping of items */
+}
+
+/* Grid items need to have fixed width for horizontal scrolling to work well */
+.grid-item,
+.project-item,
+.interest {
+    flex: 0 0 250px; /* Fixed width for consistent sizing */
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    scroll-snap-align: center; /* Centers item when snapped */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effects */
+}
+
+.grid-item img,
+.project-item img,
+.interest img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.grid-item h3,
+.project-item h3,
+.interest h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Project Item Hover Effect */
+.project-item:hover {
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
+}
+
 /* CV Button styled as a grid item */
 .cv-button {
     display: block;
@@ -148,115 +184,81 @@ a:hover {
 }
 
 
+/* Update for Mobile devices to ensure proper horizontal layout */
+@media (max-width: 768px) {
+    .grid-container,
+    .project-row,
+    .interests-row {
+        flex-direction: row;  /* Force items to be displayed in a row */
+        overflow-x: auto;  /* Ensure horizontal scrolling on narrow screens */
+        flex-wrap: nowrap;  /* Prevent wrapping */
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Grid layout for scrollable sections */
-.scrollable-grid {
-    display: flex;
-    flex-wrap: nowrap;  /* Prevent wrapping of items */
-    gap: 20px;
-    overflow-x: auto; /* Horizontal scrolling */
-    padding: 20px;
-    justify-content: center; /* Center items horizontally */
-    align-items: stretch; /* Align items vertically */
-    scroll-snap-type: x mandatory; /* Snap to grid items */
+    /* Adjust items for mobile */
+    .grid-item,
+    .project-item,
+    .interest {
+        flex: 0 0 90%; /* Wider items for better touch interaction */
+        width: auto; /* Allow flexibility */
+    }
 }
 
-/* Individual project items */
-.project-item {
-    flex: 0 0 250px; /* Fixed width for consistency */
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center;
-    scroll-snap-align: center; /* Center item when snapped */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribute content inside evenly */
-}
-
-.project-item img {
-    width: 100%;
-    height: 150px; /* Fixed height for all images */
-    object-fit: cover; /* Ensure image fills container while maintaining aspect ratio */
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.project-item h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.project-item p {
+.interest p {
     font-size: 1rem;
+    line-height: 1.5;
     margin-bottom: 10px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap; /* Prevent text from overflowing */
 }
 
-/* Hover effect for project items */
-.project-item:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow */
+
+/* Competencies, Projects, and Interests: Scrollable Grid */
+.scrollable-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px;
+    height: auto;  /*Let height be dynamic, depends on content */
+    overflow-y: scroll; /* Allow vertical scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    padding: 20px;
+    box-sizing: border-box;
+    justify-items: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically within their grid cell */
 }
 
-/* Custom scrollbar styling */
 .scrollable-grid::-webkit-scrollbar {
-    height: 10px;
+    width: 10px; /* Customize scrollbar width */
 }
 
 .scrollable-grid::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #888; /* Custom scrollbar color */
     border-radius: 10px;
 }
 
 .scrollable-grid::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #555; /* Scrollbar color on hover */
 }
 
-/* Mobile and medium screen adjustments */
+/* Individual items in the grid */
+.scrollable-grid .grid-item,
+.scrollable-grid .project-item,
+.scrollable-grid .interest {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile adjustments */
+
 @media (max-width: 1024px) {
     .scrollable-grid {
-        flex-direction: row; /* Keep items in a row */
-    }
-    
-    .project-item {
-        flex: 0 0 90%; /* Make items take up 90% of width */
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
     }
 }
 
 @media (max-width: 768px) {
     .scrollable-grid {
-        flex-direction: column; /* Stack items on small screens */
-    }
-    
-    .project-item {
-        flex: 0 0 100%; /* Full width on mobile */
-        height: auto; /* Allow flexibility for text */
-    }
-
-    .project-item img {
-        height: auto; /* Allow image height to adjust based on content */
+        grid-template-columns: 1fr; /* 1 item per row on mobile */
     }
 }
