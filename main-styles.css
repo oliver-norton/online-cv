@@ -103,7 +103,9 @@ body {
     }
 }
 
-/* General Grid Item Style */
+
+
+/* Ensure horizontal scrolling and no wrapping in grid/row containers */
 .grid-container,
 .project-row,
 .interests-row {
@@ -111,10 +113,12 @@ body {
     gap: 20px;
     overflow-x: auto; /* Enables horizontal scrolling */
     scroll-snap-type: x mandatory; /* Snap to grid items on horizontal scroll */
-    padding: 10px 0; /* Adds some spacing for better usability */
+    padding: 10px 0; /* Adds spacing */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    flex-wrap: nowrap;  /* Prevent wrapping of items */
 }
 
+/* Grid items need to have fixed width for horizontal scrolling to work well */
 .grid-item,
 .project-item,
 .interest {
@@ -127,6 +131,8 @@ body {
     scroll-snap-align: center; /* Centers item when snapped */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effects */
 }
+
+
 
 .grid-item img,
 .project-item img,
@@ -169,23 +175,26 @@ body {
     border: 2px solid black;
 }
 
-/* Update for Mobile devices to keep items in row */
+
+/* Update for Mobile devices to ensure proper horizontal layout */
 @media (max-width: 768px) {
     .grid-container,
     .project-row,
     .interests-row {
-        flex-direction: row; /* Force items to be displayed in a row */
-        overflow-x: auto;  /* Horizontal scrolling on narrow screens */
+        flex-direction: row;  /* Force items to be displayed in a row */
+        overflow-x: auto;  /* Ensure horizontal scrolling on narrow screens */
+        flex-wrap: nowrap;  /* Prevent wrapping */
     }
 
-    /* Make items responsive on mobile */
+    /* Adjust items for mobile */
     .grid-item,
     .project-item,
     .interest {
-        flex: 0 0 90%; /* Makes items wider on small screens */
-        width: auto; /* Removes fixed width, adjusts for the available space */
+        flex: 0 0 90%; /* Wider items for better touch interaction */
+        width: auto; /* Allow flexibility */
     }
 }
+
 
 .interest p {
     font-size: 1rem;
