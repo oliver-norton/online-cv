@@ -103,81 +103,63 @@ body {
     }
 }
 
-/* Competencies Grid */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+/* General Grid Item Style */
+.grid-container,
+.project-row,
+.interests-row {
+    display: flex;
     gap: 20px;
-    width: 90%;
-    text-align: center;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to grid items on horizontal scroll */
+    padding: 10px 0; /* Adds some spacing for better usability */
 }
 
-.grid-item img {
-    width: 100px;
+.grid-item,
+.project-item,
+.interest {
+    flex: 0 0 250px; /* Fixed width for consistent sizing */
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    scroll-snap-align: center; /* Centers item when snapped */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effects */
+}
+
+.grid-item img,
+.project-item img,
+.interest img {
+    width: 100%;
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 
-.grid-item {
-    background-color: #f0f0f0; /* Light grey background */
-    padding: 20px; /* Add spacing inside the box */
-    border-radius: 10px; /* Rounded corners for a smoother look */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
-    text-align: center;
+.grid-item h3,
+.project-item h3,
+.interest h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
-/* Projects Row */
-.project-row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-}
-
-/* .project-item {
-    width: 200px;
-} */
-
-.project-item {
-    background-color: #f0f0f0; /* Light grey background */
-    padding: 20px; /* Add spacing inside the box */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center; /* Centre text and content */
-    max-width: 250px; /* Optional: limit the width of the project box */
-    text-decoration: none; /* Ensure no underlines on links */
-    color: inherit; /* Keep text colours consistent */
-    display: block; /* Makes the whole box clickable */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Adds hover animation */
-}
-
-
-.project-item img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.project-item {
-    display: block; /* Ensures the whole box is clickable */
-    text-decoration: none; /* Removes the underline from the link */
-    color: inherit; /* Keeps the original text colour */
-}
-
+/* Project Item Hover Effect */
 .project-item:hover {
     transform: scale(1.05); /* Slightly enlarge the box on hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
 }
 
-
-/* CV Button */
+/* CV Button styled as a grid item */
 .cv-button {
+    display: block;
     background-color: black;
     color: white;
-    padding: 10px 20px;
-    border-radius: 30px;
+    padding: 20px;
+    border-radius: 10px;
     text-decoration: none;
     font-size: 1.2rem;
     transition: all 0.3s;
+    max-width: 250px;
+    text-align: center;
 }
 
 .cv-button:hover {
@@ -186,40 +168,13 @@ body {
     border: 2px solid black;
 }
 
-/* Interests Section */
-.interests-row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
-    margin-top: 20px;
-}
-
-/* .interest {
-    text-align: center;
-    flex: 1 1 calc(33.33% - 40px); /* 3 items per row with spacing */
-    /* margin: 0 20px; */ 
-    /* max-width: 300px;} /* Limits width for consistent card size */
-
-.interest {
-    background-color: #f0f0f0; /* Light grey background */
-    padding: 20px; /* Add spacing inside the box */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center; /* Centre text and content */
-    flex: 1 1 calc(33.33% - 40px); /* Keep responsive layout */
-    max-width: 250px; /* Optional: limit the width of the interest box */
-}
-
-.interest h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.interest img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
+/* Horizontal Scroll - Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .grid-item,
+    .project-item,
+    .interest {
+        flex: 0 0 90%; /* Larger width for better touch interaction */
+    }
 }
 
 .interest p {
@@ -228,13 +183,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-    .interest {
-        flex: 1 1 100%; /* Full-width on smaller devices */
-        max-width: none;
-    }
-}
 
 /* Competencies, Projects, and Interests: Scrollable Grid */
 .scrollable-grid {
