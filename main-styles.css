@@ -112,6 +112,7 @@ body {
     overflow-x: auto; /* Enables horizontal scrolling */
     scroll-snap-type: x mandatory; /* Snap to grid items on horizontal scroll */
     padding: 10px 0; /* Adds some spacing for better usability */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .grid-item,
@@ -168,12 +169,21 @@ body {
     border: 2px solid black;
 }
 
-/* Horizontal Scroll - Adjustments for smaller screens */
+/* Update for Mobile devices to keep items in row */
 @media (max-width: 768px) {
+    .grid-container,
+    .project-row,
+    .interests-row {
+        flex-direction: row; /* Force items to be displayed in a row */
+        overflow-x: auto;  /* Horizontal scrolling on narrow screens */
+    }
+
+    /* Make items responsive on mobile */
     .grid-item,
     .project-item,
     .interest {
-        flex: 0 0 90%; /* Larger width for better touch interaction */
+        flex: 0 0 90%; /* Makes items wider on small screens */
+        width: auto; /* Removes fixed width, adjusts for the available space */
     }
 }
 
