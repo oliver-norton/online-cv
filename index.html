@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Oliver Norton - Portfolio</title>
         <link rel="stylesheet" href="main-styles.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <!-- Persistent Bottom Navigation -->
@@ -73,23 +72,27 @@
             <h2>COMPETENCIES</h2>
             <div class="scrollable-grid">
                 <div class="project-item">
-                    <img src="images/competencies/deep-learning.png" alt="Competency 1">
                     <h3>Data Science</h3>
+                    <img src="images/competencies/deep-learning.png" alt="Competency 1">
+                    
                     <p>Building predictive models, time series analysis, and advanced machine learning solutions.</p>
                 </div>
                 <div class="project-item">
-                    <img src="images/competencies/data-engineer.png" alt="Competency 2">
                     <h3>Data Engineering</h3>
+                    <img src="images/competencies/data-engineer.png" alt="Competency 2">
+                    
                     <p>Designing and automating ETL pipelines, optimising workflows, and ensuring data integrity.</p>
                 </div>
                 <div class="project-item">
-                    <img src="images/competencies/cloud.png" alt="Competency 3">
                     <h3>Cloud Computing</h3>
+                    <img src="images/competencies/cloud.png" alt="Competency 3">
+                    
                     <p>Deploying scalable data solutions using Docker and Azure for modern architectures.</p>
                 </div>
                 <div class="project-item">
-                    <img src="images/competencies/data-visualisation.png" alt="Competency 4">
                     <h3>Data Visualisation</h3>
+                    <img src="images/competencies/data-visualisation.png" alt="Competency 4">
+                    
                     <p>Crafting compelling visualisations in Power BI, Tableau, and custom Python plots.</p>
                 </div>
             </div>
@@ -101,26 +104,21 @@
             <h2>INTERESTS</h2>
             <div class="scrollable-grid">
                 <!-- Cycling -->
-                <div class="interest">
+                <div class="project-item">
                     <h3>Cycling</h3>
                     <img src="images/interests/bike_trip_cr.png" alt="Cycling from Morocco to England">
                     <p>At age 19, I cycled from the south of Morocco to the south of England, over 4000 km.</p>
                 </div>
         
                 <!-- Hiking -->
-                <div class="interest">
+                <div class="project-item">
                     <h3>Hiking</h3>
                     <img src="images/interests/hiking.jpg" alt="Hiking highest peaks">
                     <p>I’ve climbed the highest peaks in 4 countries: Morocco (3400m), Zimbabwe (2592m), UK (1345m), and Ireland (1039m).</p>
                 </div>
         
                 <!-- Travel and Living in Other Countries -->
-                <div class="interest">
-                    <h3>Travel</h3>
-                    <img src="images/interests/countries.png" alt="Map of visited countries">
-                    <p>Now, I’ve visited 35 countries, and counting, and lived in 7 (Ireland, Zimbabwe, China, New Zealand, Australia, Denmark, and France).</p>
-                </div>
-                <div class="interest">
+                <div class="project-item">
                     <h3>Travel</h3>
                     <img src="images/interests/countries.png" alt="Map of visited countries">
                     <p>Now, I’ve visited 35 countries, and counting, and lived in 7 (Ireland, Zimbabwe, China, New Zealand, Australia, Denmark, and France).</p>
@@ -132,7 +130,7 @@
         <!-- CV -->
         <section id="cv" class="page">
             <h2>DOWNLOAD MY CV</h2>
-            <div class="interest">
+            <div class="project-item">
                 <h3><a href="Oliver_Norton_CV.pdf" class="cv-button" download>Download</a></h3>
             </div>
 
@@ -157,7 +155,7 @@
                 }
             });
     
-            // Update the active class on nav links
+            // Update the active class on nav links based on scroll position
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${currentSection}`) {
@@ -168,7 +166,29 @@
     
         // Attach scroll event listener
         window.addEventListener('scroll', updateActiveLink);
+    
+        // Function to handle clicking a nav link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                // Prevent default link behavior (scrolling)
+                e.preventDefault();
+    
+                // Remove active class from all nav links
+                navLinks.forEach(link => link.classList.remove('active'));
+    
+                // Add active class to the clicked nav link
+                this.classList.add('active');
+    
+                // Scroll to the section corresponding to the clicked link
+                const targetSection = document.querySelector(this.getAttribute('href'));
+                window.scrollTo({
+                    top: targetSection.offsetTop - 10, // Add an offset to prevent cover by nav
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
+        
         
     </body>
     </html>
