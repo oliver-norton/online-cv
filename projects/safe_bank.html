@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFEBANK: Financial Fraud Detection Model Using LightGBM</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <a href="https://oliver-norton.github.io/online-cv/#projects" class="back-button">
+        &larr; Back to Projects
+    </a>
+    <!-- Top Section with Background Image -->
+    <div class="background-image">
+        <header>
+            <h1>OLIVER NORTON</h1>
+            <h2>PROJECTS</h2>
+        </header>
+    </div>
+
+    <!-- Blog Layout -->
+    <div class="blog-container">
+        <!-- Left Column -->
+        <div class="blog-sidebar">
+            <p><strong>Date:</strong> December 2024</p>
+            <p><strong>Tools used:</strong> Python</p>
+            <p><strong>Keywords:</strong> Fraud detection, FinTech</p>
+            <p><strong>Data source:</strong> <a href="https://www.kaggle.com/c/ieee-fraud-detection/" target="_blank">IEEE-CIS Fraud Detection Dataset</a></p>
+        </div>
+
+        <!-- Right Column -->
+        <div class="blog-main">
+            <h2>SAFEBANK: FINANCIAL FRAUD DETECTION MODEL USING LIGHTGBM</h2>
+            <div class="blog-cover">
+                <img src="../images/articles/safe_bank/fraud_detection.jpg" alt="Fraud Detection">
+            </div>
+
+            <p>
+                Financial fraud is a serious issue in the financial industry and can cost substantial amounts. Identifying suspicious transactions is the goal.
+            </p>
+
+            <h3>Overview</h3>
+            <p>
+                The dataset I am using is from the <a href="https://www.kaggle.com/c/ieee-fraud-detection/overview" target="_blank">IEEE-CIS Fraud Detection competition</a>. More information about the features is available <a href="https://www.kaggle.com/c/ieee-fraud-detection/data" target="_blank">here</a>.
+            </p>
+
+            <h3>Exploratory Data Analysis and Model Choice</h3>
+
+            <h4>2.1 Identifying Categorical and Numerical Features</h4>
+
+            <h4>2.2 Evaluating Class Imbalance</h4>
+            <p>
+                The dataset is highly imbalanced, with the target variable being only 3.5% of the dataset:
+            </p>
+            <ul>
+                <li>Not fraud: 96.5%</li>
+                <li>Fraud: 3.5%</li>
+            </ul>
+            <img src="../images/articles/safe_bank/distribution_isfraud.png" alt="Class Imbalance">
+
+            <h4>2.3 Evaluating Feature Distributions</h4>
+            <p>
+                Many features are not normally distributed and have outliers. This makes scaling challenging, and linear models unsuitable. To address this, I chose LightGBM, a tree-based model that handles non-normal distributions effectively.
+            </p>
+            <img src="../images/articles/safe_bank/Features_distributions.png" alt="Feature Distributions">
+
+            <h4>2.4 Evaluating Correlated Features</h4>
+            <p>
+                Highly correlated features were identified and later removed to reduce model complexity and noise. Similarly, features with low correlation to the target variable were also removed.
+            </p>
+            <img src="../images/articles/safe_bank/Correlations.png" alt="Correlations">
+
+            <h4>2.5 Model Choice - LightGBM</h4>
+            <p>
+                <strong>Benefits:</strong>
+            </p>
+            <ul>
+                <li>Handles sparse datasets and NaN values without fillers</li>
+                <li>Works well with non-normally distributed features</li>
+                <li>Less computationally expensive than XGBoost</li>
+                <li>Native handling of categorical features</li>
+            </ul>
+            <p>
+                <strong>Drawbacks:</strong>
+            </p>
+            <ul>
+                <li>Slightly worse performance than XGBoost</li>
+                <li>Performs worse than newer deep learning approaches</li>
+            </ul>
+
+            <h3>Categorical Preprocessing</h3>
+            <ul>
+                <li>Identified cardinality of features</li>
+                <li>Applied label encoding to low cardinality features</li>
+                <li>Applied target encoding to high cardinality features</li>
+            </ul>
+
+            <h3>Feature Engineering</h3>
+
+            <h4>4.1 Enriching Date-Time Related Variables</h4>
+            <p>
+                The TransactionDT variable is a time-delta feature. Additional columns derived from it capture time-related patterns:
+            </p>
+            <ul>
+                <li>Daily fraud rates</li>
+                <li>Cyclical transformations (sin/cos for hours and weekdays)</li>
+            </ul>
+            <img src="../images/articles/safe_bank/fraud_rate_daily.png" alt="Fraud Rate Daily">
+
+            <h4>4.2 Enriching Transaction Amount</h4>
+            <p>
+                Splitting TransactionAmt into dollars and cents helped capture patterns specific to transaction amounts.
+            </p>
+
+            <h4>4.3 Updating Columns and Removing Low Correlation Features</h4>
+            <p>
+                Features with low correlation to the target variable were removed to reduce noise and improve performance.
+            </p>
+
+            <h3>Training and Classification</h3>
+
+            <h4>5.1 Setting Parameters and Training</h4>
+            <p>
+                Limited hyperparameter tuning was performed. Instead, the focus was on feature engineering to improve performance.
+            </p>
+
+            <h4>5.2 Model Evaluation</h4>
+            <p>
+                The final LightGBM model achieved an ROC AUC of 0.932 after validation. This performance is in line with other public submissions:
+            </p>
+            <ul>
+                <li><strong>Bronze:</strong> ROC AUC ~0.885 (<a href="https://github.com/pritesh-shrivastava/kaggle-ieee-fraud-detection" target="_blank">GitHub</a>)</li>
+                <li><strong>Silver:</strong> ROC AUC ~0.938 (<a href="https://github.com/shejz/IEEE-CIS-Fraud-Detection" target="_blank">GitHub</a>)</li>
+            </ul>
+            <p>
+                If tested on the official dataset, my model would likely score an ROC AUC of approximately 0.88, in line with a bronze medal.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Oliver Norton</p>
+    </footer>
+</body>
+</html>
