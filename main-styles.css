@@ -193,7 +193,6 @@ body {
     }
 }
 
-
 .interest p {
     font-size: 1rem;
     line-height: 1.5;
@@ -204,11 +203,10 @@ body {
 /* Competencies, Projects, and Interests: Scrollable Grid */
 .scrollable-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Auto-fit 2-4 items in a row */
-    grid-template-rows: repeat(2, 1fr); /* 2 rows per "page" */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Auto-fit items but limit to 3 items per row */
     gap: 20px;
-    height: 80vh; /* Adjust to control how much fits in the view (80% of viewport height) */
-    overflow-y: scroll; /* Enable vertical scrolling */
+    height: auto; /* Let height be dynamic, depends on content */
+    overflow-y: scroll; /* Allow vertical scrolling */
     scroll-behavior: smooth; /* Smooth scrolling */
     padding: 20px;
     box-sizing: border-box;
@@ -240,9 +238,15 @@ body {
 }
 
 /* Mobile adjustments */
+
+@media (max-width: 1024px) {
+    .scrollable-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
+    }
+}
+
 @media (max-width: 768px) {
     .scrollable-grid {
-        grid-template-columns: 1fr; /* Single column on mobile */
-        grid-template-rows: repeat(4, 1fr); /* 4 items per "page" */
+        grid-template-columns: 1fr; /* 1 item per row on mobile */
     }
 }
