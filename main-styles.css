@@ -235,3 +235,49 @@ body {
         max-width: none;
     }
 }
+
+/* Competencies, Projects, and Interests: Scrollable Grid */
+.scrollable-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Auto-fit 2-4 items in a row */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows per "page" */
+    gap: 20px;
+    height: 80vh; /* Adjust to control how much fits in the view (80% of viewport height) */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.scrollable-grid::-webkit-scrollbar {
+    width: 10px; /* Customize scrollbar width */
+}
+
+.scrollable-grid::-webkit-scrollbar-thumb {
+    background: #888; /* Custom scrollbar color */
+    border-radius: 10px;
+}
+
+.scrollable-grid::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Scrollbar color on hover */
+}
+
+/* Individual items in the grid */
+.scrollable-grid .grid-item,
+.scrollable-grid .project-item,
+.scrollable-grid .interest {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .scrollable-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        grid-template-rows: repeat(4, 1fr); /* 4 items per "page" */
+    }
+}
