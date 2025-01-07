@@ -4,58 +4,18 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
-    background-color: #e4dad2; /* Set the background color for the entire page */
+    background-color: #e4dad2;
 }
 
-
+/* Responsive Page Sections */
 .page {
-    height: 100vh;
+    height: auto; /* Adjust height for smaller screens */
+    min-height: 100vh; /* Ensure sections still take up full screen height if needed */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-}
-
-.full-cover {
-    background: url('images/cover_full_nz.jpg') no-repeat center center/cover;
-    color: white;
-    text-align: center;
-    position: relative;
-}
-
-.full-cover::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2);  /* Dark overlay with 50% opacity */
-    z-index: 1;
-}
-
-.full-cover header {
-    position: relative;
-    z-index: 2;  /* Ensure the header text is above the overlay */
-}
-
-.full-cover header h1 {
-    font-size: 3rem;
-}
-
-.full-cover header h2 {
-    margin-top: 10px;
-    font-size: 1.5rem;
-}
-
-.social-links {
-    margin-top: 20px;
-}
-
-.social-links img {
-    width: 30px;
-    margin: 0 10px;
 }
 
 /* Persistent Navigation Bar */
@@ -69,6 +29,7 @@ body {
     align-items: center;
     padding: 10px 0;
     z-index: 1000;
+    flex-wrap: wrap; /* Allows nav links to wrap on smaller screens */
 }
 
 .nav-link {
@@ -86,135 +47,132 @@ body {
     color: black;
 }
 
+/* Responsive Title Section */
+.full-cover header h1 {
+    font-size: 2rem; /* Reduce title font size for smaller screens */
+}
+
+.full-cover header h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Social Links Icons */
+.social-links img {
+    width: 25px; /* Reduce icon size */
+    margin: 0 8px;
+}
+
 /* Competencies Grid */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible grid */
     gap: 20px;
-    width: 90%;
+    width: 100%; /* Ensure full-width on smaller screens */
     text-align: center;
 }
 
 .grid-item img {
-    width: 100px;
+    width: 80px; /* Reduce image size */
     margin-bottom: 10px;
 }
 
-.grid-item {
-    background-color: #f0f0f0; /* Light grey background */
-    padding: 20px; /* Add spacing inside the box */
-    border-radius: 10px; /* Rounded corners for a smoother look */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
-    text-align: center;
-}
-
-/* Projects Row */
+/* Projects Section */
 .project-row {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
     text-align: center;
 }
 
-/* .project-item {
-    width: 200px;
-} */
-
 .project-item {
-    background-color: #f0f0f0; /* Light grey background */
-    padding: 20px; /* Add spacing inside the box */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center; /* Centre text and content */
-    max-width: 250px; /* Optional: limit the width of the project box */
-    text-decoration: none; /* Ensure no underlines on links */
-    color: inherit; /* Keep text colours consistent */
-    display: block; /* Makes the whole box clickable */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Adds hover animation */
+    max-width: 300px; /* Adjust max width for mobile */
+    width: 100%; /* Ensure boxes adjust to available space */
 }
 
-
-.project-item img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.project-item {
-    display: block; /* Ensures the whole box is clickable */
-    text-decoration: none; /* Removes the underline from the link */
-    color: inherit; /* Keeps the original text colour */
-}
-
-.project-item:hover {
-    transform: scale(1.05); /* Slightly enlarge the box on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
-}
-
-
-/* CV Button */
+/* CV Section Button */
 .cv-button {
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: all 0.3s;
-}
-
-.cv-button:hover {
-    background-color: white;
-    color: black;
-    border: 2px solid black;
+    font-size: 1rem; /* Reduce button size on smaller screens */
+    padding: 8px 16px;
+    border-radius: 20px;
 }
 
 /* Interests Section */
 .interests-row {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
-    flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
-    margin-top: 20px;
+    justify-content: center;
 }
-
-/* .interest {
-    text-align: center;
-    flex: 1 1 calc(33.33% - 40px); /* 3 items per row with spacing */
-    /* margin: 0 20px; */ 
-    /* max-width: 300px;} /* Limits width for consistent card size */
 
 .interest {
-    background-color: #f0f0f0; /* Light grey background */
-    padding: 20px; /* Add spacing inside the box */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center; /* Centre text and content */
-    flex: 1 1 calc(33.33% - 40px); /* Keep responsive layout */
-    max-width: 250px; /* Optional: limit the width of the interest box */
-}
-
-.interest h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    flex: 1 1 100%; /* Full-width on smaller screens */
+    max-width: 350px; /* Keep a consistent max width */
+    padding: 15px; /* Adjust padding */
 }
 
 .interest img {
-    width: 100%;
     border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.interest p {
-    font-size: 1rem;
-    line-height: 1.5;
     margin-bottom: 10px;
 }
 
-/* Adjustments for smaller screens */
+/* Responsive Adjustments for Smaller Screens */
 @media (max-width: 768px) {
+    .full-cover header h1 {
+        font-size: 1.8rem;
+    }
+
+    .full-cover header h2 {
+        font-size: 1rem;
+    }
+
+    .social-links img {
+        width: 20px; /* Further reduce icon size */
+    }
+
+    .grid-item img {
+        width: 70px; /* Further reduce competency image size */
+    }
+
+    .project-item {
+        max-width: 100%; /* Full-width projects */
+    }
+
+    .persistent-nav {
+        flex-direction: column; /* Stack navigation links */
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .full-cover header h1 {
+        font-size: 1.5rem;
+    }
+
+    .full-cover header h2 {
+        font-size: 0.9rem;
+    }
+
+    .social-links img {
+        width: 18px; /* Further reduce icon size */
+    }
+
+    .cv-button {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
     .interest {
-        flex: 1 1 100%; /* Full-width on smaller devices */
-        max-width: none;
+        padding: 10px; /* Adjust padding for ultra-small devices */
+    }
+
+    .interest img {
+        border-radius: 8px;
+        margin-bottom: 8px;
     }
 }
