@@ -1,0 +1,178 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #e4dad2;
+}
+
+/* Responsive Page Sections */
+.page {
+    height: auto; /* Adjust height for smaller screens */
+    min-height: 100vh; /* Ensure sections still take up full screen height if needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Persistent Navigation Bar */
+.persistent-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1000;
+    flex-wrap: wrap; /* Allows nav links to wrap on smaller screens */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: white;
+    color: black;
+}
+
+/* Responsive Title Section */
+.full-cover header h1 {
+    font-size: 2rem; /* Reduce title font size for smaller screens */
+}
+
+.full-cover header h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Social Links Icons */
+.social-links img {
+    width: 25px; /* Reduce icon size */
+    margin: 0 8px;
+}
+
+/* Competencies Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible grid */
+    gap: 20px;
+    width: 100%; /* Ensure full-width on smaller screens */
+    text-align: center;
+}
+
+.grid-item img {
+    width: 80px; /* Reduce image size */
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+.project-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+}
+
+.project-item {
+    max-width: 300px; /* Adjust max width for mobile */
+    width: 100%; /* Ensure boxes adjust to available space */
+}
+
+/* CV Section Button */
+.cv-button {
+    font-size: 1rem; /* Reduce button size on smaller screens */
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* Interests Section */
+.interests-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.interest {
+    flex: 1 1 100%; /* Full-width on smaller screens */
+    max-width: 350px; /* Keep a consistent max width */
+    padding: 15px; /* Adjust padding */
+}
+
+.interest img {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .full-cover header h1 {
+        font-size: 1.8rem;
+    }
+
+    .full-cover header h2 {
+        font-size: 1rem;
+    }
+
+    .social-links img {
+        width: 20px; /* Further reduce icon size */
+    }
+
+    .grid-item img {
+        width: 70px; /* Further reduce competency image size */
+    }
+
+    .project-item {
+        max-width: 100%; /* Full-width projects */
+    }
+
+    .persistent-nav {
+        flex-direction: column; /* Stack navigation links */
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .full-cover header h1 {
+        font-size: 1.5rem;
+    }
+
+    .full-cover header h2 {
+        font-size: 0.9rem;
+    }
+
+    .social-links img {
+        width: 18px; /* Further reduce icon size */
+    }
+
+    .cv-button {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .interest {
+        padding: 10px; /* Adjust padding for ultra-small devices */
+    }
+
+    .interest img {
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+}
