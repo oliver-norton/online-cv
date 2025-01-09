@@ -100,81 +100,8 @@ a:hover {
     color: black;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .persistent-nav {
-        font-size: 0.9rem; /* Slightly reduce font size */
-        padding: 8px 0; /* Reduce padding */
-    }
-
-    .nav-link {
-        padding: 8px 15px; /* Reduce padding inside links */
-        font-size: 0.8rem; /* Reduce link font size */
-    }
-}
-
-/* Ensure horizontal scrolling and no wrapping in grid/row containers */
-.project-row {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Snap to grid items on horizontal scroll */
-    padding: 10px 0; /* Adds spacing */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    flex-wrap: nowrap;  /* Prevent wrapping of items */
-}
-
-/* Grid items need to have fixed width for horizontal scrolling to work well */
-.project-item {
-    flex: 0 0 250px; /* Fixed width for consistent sizing */
-    background-color: #f0f0f0; /* Light grey background */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center;
-    scroll-snap-align: center; /* Centers item when snapped */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effects */
-}
-
-.project-item p {
-    word-wrap: break-word; /* Break long words to fit within the box */
-    overflow-wrap: break-word; /* Break words if they overflow */
-    white-space: normal; /* Ensure text wraps properly */
-    overflow: hidden; /* Prevent text from spilling out */
-    text-overflow: ellipsis; /* Add ellipsis for overflowing text, if needed */
-}
-
-.project-item img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.scrollable-grid .project-item img {
-    width: 100%; /* Make the image fill the width of the container */
-    height: auto; /* Maintain the image's original aspect ratio */
-    max-height: 100%; /* Ensure the image doesn't exceed the box's height */
-    object-fit: contain; /* Make the image fit neatly without cropping */
-    border-radius: 10px; /* Retain your border radius */
-    margin-bottom: 10px; /* Keep the spacing below the image */
-}
 
 
-.scrollable-grid .project-item h3.cv-button {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.project-item h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-/* Project Item Hover Effect */
-.project-item:hover {
-    transform: scale(1.05); /* Slightly enlarge the box on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
-}
 
 /* CV Button styled as a grid item */
 .cv-button {
@@ -196,37 +123,8 @@ a:hover {
     border: 2px solid black;
 }
 
-
-/* Update for Mobile devices to ensure proper horizontal layout */
-@media (max-width: 768px) {
-    .project-row {
-        flex-direction: row;  /* Force items to be displayed in a row */
-        overflow-x: auto;  /* Ensure horizontal scrolling on narrow screens */
-        flex-wrap: nowrap;  /* Prevent wrapping */
-    }
-
-    /* Adjust items for mobile */
-    .project-item {
-        flex: 0 0 90%; /* Wider items for better touch interaction */
-        width: auto; /* Allow flexibility */
-    }
-}
-
-/* Competencies, Projects, and Interests: Scrollable Grid */
-
-/* Default behaviour for larger screens: horizontal scrolling */
-.scrollable-grid {
-    display: flex; /* Switch from grid to flex for horizontal layout */
-    flex-wrap: nowrap; /* Prevent items from wrapping to the next row */
-    overflow-x: auto; /* Enable horizontal scrolling if needed */
-    gap: 20px; /* Add spacing between items */
-    padding: 10px; /* Add padding for better aesthetics */
-    scroll-snap-type: x mandatory; /* Smooth snap-scrolling effect */
-}
-
-
 .scrollable-grid::-webkit-scrollbar {
-    width: 15px; /* Customize scrollbar width */
+    width: 10px; /* Customize scrollbar width */
 }
 
 .scrollable-grid::-webkit-scrollbar-thumb {
@@ -239,11 +137,23 @@ a:hover {
 }
 
 
-/* Individual items in the grid */
+/* Default behaviour for larger screens: horizontal scrolling */
+/* Default behaviour for larger screens: horizontal scrolling */
+/* Default behaviour for larger screens: horizontal scrolling */
+.scrollable-grid {
+    display: flex; /* Switch from grid to flex for horizontal layout */
+    flex-wrap: wrap; /* Prevent items from wrapping to the next row */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    gap: 20px; /* Add spacing between items */
+    padding: 10px; /* Add padding for better aesthetics */
+    scroll-snap-type: x mandatory; /* Smooth snap-scrolling effect */
+}
+
+/* Individual items inside the scrollable grid */
 .scrollable-grid .project-item {
-    flex: 0 0 250px; /* Fixed width for horizontal layout */
-    height: 400px; /* Fixed height, as requested */
-    background-color: #f5f5f5; /* Your original background colour */
+    flex: 0 0 250px; /* Fixed width for consistent sizing */
+    height: 400px; /* Fixed height */
+    background-color: #f5f5f5; /* Original background colour */
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
@@ -251,18 +161,52 @@ a:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Your original alignment */
+    justify-content: space-between; /* Original alignment */
     scroll-snap-align: center; /* Align items when scrolling */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effects */
+}
+
+.scrollable-grid .project-item img {
+    width: 100%; /* Make the image fill the width of the container */
+    height: auto; /* Maintain the image's original aspect ratio */
+    max-height: 100%; /* Ensure the image doesn't exceed the box's height */
+    object-fit: contain; /* Make the image fit neatly without cropping */
+    border-radius: 10px; /* Retain your border radius */
+    margin-bottom: 10px; /* Keep the spacing below the image */
 }
 
 
-/* Mobile adjustments */
-
-@media (max-width: 1024px) {
-    .scrollable-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
-    }
+.project-item p {
+    word-wrap: break-word; /* Break long words to fit within the box */
+    overflow-wrap: break-word; /* Break words if they overflow */
+    white-space: normal; /* Ensure text wraps properly */
+    overflow: hidden; /* Prevent text from spilling out */
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text, if needed */
 }
+
+.project-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.scrollable-grid .project-item h3.cv-button {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.project-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Project Item Hover Effect */
+.project-item:hover {
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
+}
+
+
 
 /* Adjust for mobile (override desktop behaviour) */
 @media (max-width: 768px) {
@@ -271,12 +215,10 @@ a:hover {
         grid-template-columns: 1fr; /* One item per row */
         gap: 10px; /* Maintain spacing */
         flex-wrap: nowrap; 
-        overflow-x: auto; /* No horizontal scrolling */
         scroll-snap-type: x mandatory; /* Smooth snap-scrolling effect */
         -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
         padding: 10px 0; /* Padding for better aesthetics */
     }
-
 
     .page {
         overflow-y: auto; /* Restore vertical scrolling for mobile */
@@ -286,5 +228,14 @@ a:hover {
         height: 400px; /* Optional: adjust height for mobile if needed */
         flex: 0 0 80%; /* Each item takes 80% of screen width */
         scroll-snap-align: center; /* Align to center during scroll */
+    }
+    .persistent-nav {
+        font-size: 0.9rem; /* Slightly reduce font size */
+        padding: 8px 0; /* Reduce padding */
+    }
+
+    .nav-link {
+        padding: 8px 15px; /* Reduce padding inside links */
+        font-size: 0.8rem; /* Reduce link font size */
     }
 }
