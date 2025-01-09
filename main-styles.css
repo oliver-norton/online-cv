@@ -19,6 +19,7 @@ body {
     padding: 20px;
     overflow-y: hidden; /* Prevent vertical scrolling */
     scroll-snap-align: start; /* Align this section to the start of the viewport during scrolling */
+    padding-top: 50px; /* Adjust for the height of the sticky navigation */
 }
 
 

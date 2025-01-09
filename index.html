@@ -143,11 +143,11 @@
         // Get all navigation links and sections
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('.page');
-    
+
         // Function to update active link based on scroll position
         function updateActiveLink() {
             let currentSection = null;
-    
+
             // Determine which section is currently in view
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
@@ -156,7 +156,7 @@
                     currentSection = section.id;
                 }
             });
-    
+
             // Update the active class on nav links based on scroll position
             navLinks.forEach(link => {
                 link.classList.remove('active');
@@ -165,30 +165,51 @@
                 }
             });
         }
-    
-        // Attach scroll event listener
-        window.addEventListener('scroll', updateActiveLink);
-    
+
+        // Throttle function to reduce how often scroll events trigger
+        function throttle(func, limit) {
+            let lastFunc;
+            let lastRan;
+            return function () {
+                const context = this;
+                const args = arguments;
+                if (!lastRan) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                } else {
+                    clearTimeout(lastFunc);
+                    lastFunc = setTimeout(function () {
+                        if (Date.now() - lastRan >= limit) {
+                            func.apply(context, args);
+                            lastRan = Date.now();
+                        }
+                    }, limit - (Date.now() - lastRan));
+                }
+            };
+        }
+
+        // Attach throttled scroll event listener
+        window.addEventListener('scroll', throttle(updateActiveLink, 100));
+
         // Function to handle clicking a nav link
         navLinks.forEach(link => {
             link.addEventListener('click', function (e) {
                 // Prevent default link behavior (scrolling)
                 e.preventDefault();
-    
-                // Remove active class from all nav links
-                navLinks.forEach(link => link.classList.remove('active'));
-    
+
                 // Add active class to the clicked nav link
+                navLinks.forEach(link => link.classList.remove('active'));
                 this.classList.add('active');
-    
+
                 // Scroll to the section corresponding to the clicked link
                 const targetSection = document.querySelector(this.getAttribute('href'));
-                window.scrollTo({
-                    top: targetSection.offsetTop - 10, // Add an offset to prevent cover by nav
-                    behavior: 'smooth'
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start' // Align section to the top of the viewport
                 });
             });
         });
+
     </script>
         
         
