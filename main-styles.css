@@ -55,13 +55,6 @@ body {
     font-size: 1.5rem;
 }
 
-/* Snap container */
-.snap-container {
-    scroll-snap-type: y mandatory; /* Enable vertical snap scrolling */
-    overflow-y: scroll; /* Enable vertical scrolling */
-    height: 100vh; /* Ensure it spans the full viewport */
-}
-
 .social-links {
     margin-top: 20px;
 }
