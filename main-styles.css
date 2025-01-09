@@ -256,15 +256,6 @@ a:hover {
 }
 
 
-
-/* Ensure each grid item has a consistent size in horizontal layout */
-.scrollable-grid .project-item {
-    flex: 0 0 300px; /* Fixed width for each item */
-    height: auto; /* Allow the height to adjust based on content */
-    scroll-snap-align: center; /* Align items to the center when scrolling */
-}
-
-
 /* Mobile adjustments */
 
 @media (max-width: 1024px) {
