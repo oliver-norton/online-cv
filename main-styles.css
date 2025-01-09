@@ -3,8 +3,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Enables smooth scrolling */
     background-color: #e4dad2; /* Set the background color for the entire page */
+    scroll-snap-type: y mandatory; /* Enables vertical snap-scrolling */
+    overflow-y: scroll; /* Allows scrolling */
+    height: 100vh; /* Ensure the body takes full viewport height */
 }
 
 .page {
@@ -15,13 +18,16 @@ body {
     align-items: center;
     padding: 20px;
     overflow-y: hidden; /* Prevent vertical scrolling */
+    scroll-snap-align: start; /* Align this section to the start of the viewport during scrolling */
 }
+
 
 .full-cover {
     background: url('images/cover_full_nz.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     position: relative;
+    scroll-snap-align: start; /* Enables snap scrolling */
 }
 
 .full-cover::after {
