@@ -135,6 +135,14 @@ a:hover {
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effects */
 }
 
+.project-item p {
+    word-wrap: break-word; /* Break long words to fit within the box */
+    overflow-wrap: break-word; /* Break words if they overflow */
+    white-space: normal; /* Ensure text wraps properly */
+    overflow: hidden; /* Prevent text from spilling out */
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text, if needed */
+}
+
 .project-item img {
     width: 100%;
     border-radius: 10px;
@@ -197,12 +205,6 @@ a:hover {
         flex: 0 0 90%; /* Wider items for better touch interaction */
         width: auto; /* Allow flexibility */
     }
-}
-
-.interest p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 10px;
 }
 
 /* Competencies, Projects, and Interests: Scrollable Grid */
