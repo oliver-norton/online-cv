@@ -136,13 +136,10 @@ a:hover {
     background: #555; /* Scrollbar color on hover */
 }
 
-
-/* Default behaviour for larger screens: horizontal scrolling */
-/* Default behaviour for larger screens: horizontal scrolling */
 /* Default behaviour for larger screens: horizontal scrolling */
 .scrollable-grid {
     display: flex; /* Switch from grid to flex for horizontal layout */
-    flex-wrap: wrap; /* Prevent items from wrapping to the next row */
+    flex-wrap: nowrap; /* Prevent items from wrapping to the next row */
     overflow-x: auto; /* Enable horizontal scrolling if needed */
     gap: 20px; /* Add spacing between items */
     padding: 10px; /* Add padding for better aesthetics */
@@ -175,7 +172,6 @@ a:hover {
     margin-bottom: 10px; /* Keep the spacing below the image */
 }
 
-
 .project-item p {
     word-wrap: break-word; /* Break long words to fit within the box */
     overflow-wrap: break-word; /* Break words if they overflow */
@@ -205,7 +201,6 @@ a:hover {
     transform: scale(1.05); /* Slightly enlarge the box on hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
 }
-
 
 
 /* Adjust for mobile (override desktop behaviour) */
