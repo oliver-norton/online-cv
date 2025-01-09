@@ -112,13 +112,8 @@ a:hover {
     }
 }
 
-
-
-
 /* Ensure horizontal scrolling and no wrapping in grid/row containers */
-.grid-container,
-.project-row,
-.interests-row {
+.project-row {
     display: flex;
     gap: 20px;
     overflow-x: auto; /* Enables horizontal scrolling */
@@ -129,9 +124,7 @@ a:hover {
 }
 
 /* Grid items need to have fixed width for horizontal scrolling to work well */
-.grid-item,
-.project-item,
-.interest {
+.project-item {
     flex: 0 0 250px; /* Fixed width for consistent sizing */
     background-color: #f0f0f0; /* Light grey background */
     padding: 20px;
@@ -142,33 +135,24 @@ a:hover {
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effects */
 }
 
-.grid-item img,
-.project-item img,
-.interest img {
+.project-item img {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
-.scrollable-grid .grid-item img,
-.scrollable-grid .project-item img,
-.scrollable-grid .interest img  {
+.scrollable-grid .project-item img {
     width: 100%;
     height: 375px;  /* Adjust the height to suit your images */
     object-fit: cover;  /* Ensure the image covers the assigned space */
 }
 
-.scrollable-grid .grid-item h3,
-.scrollable-grid .project-item h3.cv-button,
-.scrollable-grid .interest h3 {
+.scrollable-grid .project-item h3.cv-button {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
-
-.grid-item h3,
-.project-item h3,
-.interest h3 {
+.project-item h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
@@ -202,18 +186,14 @@ a:hover {
 
 /* Update for Mobile devices to ensure proper horizontal layout */
 @media (max-width: 768px) {
-    .grid-container,
-    .project-row,
-    .interests-row {
+    .project-row {
         flex-direction: row;  /* Force items to be displayed in a row */
         overflow-x: auto;  /* Ensure horizontal scrolling on narrow screens */
         flex-wrap: nowrap;  /* Prevent wrapping */
     }
 
     /* Adjust items for mobile */
-    .grid-item,
-    .project-item,
-    .interest {
+    .project-item {
         flex: 0 0 90%; /* Wider items for better touch interaction */
         width: auto; /* Allow flexibility */
     }
@@ -224,7 +204,6 @@ a:hover {
     line-height: 1.5;
     margin-bottom: 10px;
 }
-
 
 /* Competencies, Projects, and Interests: Scrollable Grid */
 .scrollable-grid {
@@ -237,8 +216,6 @@ a:hover {
     justify-items: center; /* Centers items horizontally */
     align-items: center; /* Centers items vertically within their grid cell */
 }
-
-
 
 .scrollable-grid::-webkit-scrollbar {
     width: 15px; /* Customize scrollbar width */
@@ -254,9 +231,7 @@ a:hover {
 }
 
 /* Individual items in the grid */
-.scrollable-grid .grid-item,
-.scrollable-grid .project-item,
-.scrollable-grid .interest {
+.scrollable-grid .project-item {
     width: 250px;  /* Fixed width */
     height: 300px; /* Fixed height, adjust to your content size */
     background-color: #f5f5f5;
@@ -269,8 +244,6 @@ a:hover {
     flex-direction: column;
     justify-content: space-between;
 }
-
-
 
 /* Mobile adjustments */
 
