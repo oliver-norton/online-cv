@@ -287,6 +287,6 @@ a:hover {
     }
 
     .scrollable-grid .project-item {
-        height: 450px; /* Optional: adjust height for mobile if needed */
+        height: 600px; /* Optional: adjust height for mobile if needed */
     }
 }
