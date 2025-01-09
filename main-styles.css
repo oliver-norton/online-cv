@@ -279,14 +279,12 @@ a:hover {
         display: flex; /* Switch to flex layout */
         grid-template-columns: 1fr; /* One item per row */
         gap: 10px; /* Maintain spacing */
+        flex-wrap: nowrap; 
         overflow-x: auto; /* No horizontal scrolling */
         scroll-snap-type: x mandatory; /* Smooth snap-scrolling effect */
         -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
         padding: 10px 0; /* Padding for better aesthetics */
     }
-
-
-        /* flex-wrap: nowrap;  */
 
 
     .page {
