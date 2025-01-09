@@ -11,7 +11,8 @@ body {
 }
 
 .page {
-    height: 100vh;
+    height: calc(100vh - 60px); /* Subtract nav bar height from section height */
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,7 +21,7 @@ body {
     overflow-y: hidden; /* Prevent vertical scrolling */
     scroll-snap-align: start; /* Align this section to the start of the viewport during scrolling */
     scroll-snap-stop: always; /* Force snapping even during fast scrolling */
-    /* padding-top: 20px; Adjust for the height of the sticky navigation */
+    /* padding-top: 50px; Adjust for the height of the sticky navigation */
 }
 
 
@@ -30,7 +31,7 @@ body {
     text-align: center;
     position: relative;
     scroll-snap-align: start; /* Enables snap scrolling */
-    
+    padding-bottom: 60px; /* Add space for the persistent navigation bar */
 }
 
 .full-cover::after {
