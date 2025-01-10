@@ -233,7 +233,7 @@ a:hover {
     }
 
     .scrollable-grid .project-item {
-        height: 350px; /* Optional: adjust height for mobile if needed */
+        height: 400px; /* Optional: adjust height for mobile if needed */
         flex: 0 0 80%; /* Each item takes 80% of screen width */
         scroll-snap-align: center; /* Align to center during scroll */
     }
