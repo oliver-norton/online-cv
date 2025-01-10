@@ -151,6 +151,7 @@ a:hover {
     display: flex; /* Switch from grid to flex for horizontal layout */
     flex-wrap: nowrap; /* Prevent items from wrapping to the next row */
     overflow-x: auto; /* Enable horizontal scrolling if needed */
+    overflow-y: hidden; /* Prevent vertical scrolling */
     gap: 20px; /* Add spacing between items */
     padding: 10px; /* Add padding for better aesthetics */
     scroll-snap-type: x mandatory; /* Smooth snap-scrolling effect */
@@ -159,7 +160,7 @@ a:hover {
 /* Individual items inside the scrollable grid */
 .scrollable-grid .project-item {
     flex: 0 0 250px; /* Fixed width for consistent sizing */
-    height: 350px; /* Fixed height */
+    height: 400px; /* Fixed height */
     background-color: #f5f5f5; /* Original background colour */
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -232,7 +233,7 @@ a:hover {
     }
 
     .scrollable-grid .project-item {
-        height: 400px; /* Optional: adjust height for mobile if needed */
+        height: 350px; /* Optional: adjust height for mobile if needed */
         flex: 0 0 80%; /* Each item takes 80% of screen width */
         scroll-snap-align: center; /* Align to center during scroll */
     }
