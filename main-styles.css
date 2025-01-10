@@ -226,6 +226,7 @@ a:hover {
         scroll-snap-type: x mandatory; /* Smooth snap-scrolling effect */
         -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
         padding: 10px 0; /* Padding for better aesthetics */
+        max-height: 80vh; /* Ensure it doesn't exceed 80% of the viewport height */
     }
 
     .page {
@@ -233,7 +234,8 @@ a:hover {
     }
 
     .scrollable-grid .project-item {
-        height: 400px; /* Optional: adjust height for mobile if needed */
+        height: calc(100% - 20px); /* Dynamic height minus padding */
+        /* height: 350px; Optional: adjust height for mobile if needed */
         flex: 0 0 80%; /* Each item takes 80% of screen width */
         scroll-snap-align: center; /* Align to center during scroll */
     }
