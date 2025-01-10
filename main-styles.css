@@ -222,6 +222,8 @@ a:hover {
         grid-template-columns: 1fr; /* One item per row */
         gap: 10px; /* Maintain spacing */
         flex-wrap: nowrap; 
+        flex: 0 0 80%; /* Keeps each item 80% of the viewport width */
+        max-width: 80%; /* Ensures no unintended resizing */
         scroll-snap-type: x mandatory; /* Smooth snap-scrolling effect */
         -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
         padding: 10px 0; /* Padding for better aesthetics */
