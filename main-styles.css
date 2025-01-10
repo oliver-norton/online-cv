@@ -235,6 +235,8 @@ a:hover {
 
     .scrollable-grid .project-item {
         height: calc(100% - 20px); /* Dynamic height minus padding */
+        min-height: 200px; /* Ensure a minimum height */
+        max-height: 350px; /* Prevent items from being too tall */
         /* height: 350px; Optional: adjust height for mobile if needed */
         flex: 0 0 80%; /* Each item takes 80% of screen width */
         scroll-snap-align: center; /* Align to center during scroll */
