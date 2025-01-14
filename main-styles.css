@@ -110,9 +110,6 @@ a:hover {
     color: black;
 }
 
-
-
-
 /* CV Button styled as a grid item */
 .cv-button {
     display: block;
@@ -226,7 +223,7 @@ a:hover {
         scroll-snap-type: x mandatory; /* Smooth snap-scrolling effect */
         -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
         padding: 10px 0; /* Padding for better aesthetics */
-        max-height: 80vh; /* Ensure it doesn't exceed 80% of the viewport height */
+        max-height: 90vh; /* Ensure it doesn't exceed 80% of the viewport height */
     }
 
     .page {
@@ -236,7 +233,7 @@ a:hover {
     .scrollable-grid .project-item {
         height: calc(100% - 20px); /* Dynamic height minus padding */
         min-height: 200px; /* Ensure a minimum height */
-        max-height: 350px; /* Prevent items from being too tall */
+        max-height: 400px; /* Prevent items from being too tall */
         /* height: 350px; Optional: adjust height for mobile if needed */
         flex: 0 0 80%; /* Each item takes 80% of screen width */
         scroll-snap-align: center; /* Align to center during scroll */
