@@ -78,6 +78,14 @@ header h2 {
     border-right: 1px solid #ddd;
 }
 
+.blog-sidebar img {
+    width: 100%; /* Ensures it doesn't exceed the container width */
+    max-width: 100%; /* Prevents overflow */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Avoids inline spacing issues */
+    margin-top: 10px; /* Adds space above the image */
+}
+
 .blog-sidebar p,
 .blog-sidebar h3 {
     margin: 10px 0;
