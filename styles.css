@@ -93,6 +93,7 @@ header h2 {
 
 .blog-sidebar a {
     color: #333;
+    text-decoration: underline;
 }
 
 .blog-sidebar a:hover {
