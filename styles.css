@@ -32,11 +32,6 @@ body {
     z-index: 1;
 }
 
-a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit the color from the surrounding text */
-}
-
 /* Optional: you can also style hover behavior if you want it to change when hovered */
 a:hover {
     color: inherit; /* Keep the text color the same on hover */
@@ -57,6 +52,11 @@ header h1 {
 
 header h2 {
     margin: 10px 0;
+}
+
+header a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the color from the surrounding text */
 }
 
 /* Blog Layout */
