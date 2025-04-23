@@ -252,3 +252,10 @@ a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.headshot {
+    width: 150px; /* or whatever size fits nicely */
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    display: block;
+}
