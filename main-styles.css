@@ -248,3 +248,7 @@ a:hover {
         font-size: 0.8rem; /* Reduce link font size */
     }
 }
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
